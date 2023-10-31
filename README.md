@@ -32,3 +32,6 @@ ssh someinternalhost
 ###подключение к bastion
 
 ssh bastion
+
+bastion_IP = 158.160.104.2
+someinternalhost_IP = 10.128.0.29
