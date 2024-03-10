@@ -24,8 +24,8 @@ resource "yandex_iam_service_account_static_access_key" "sa-static-key" {
 }
 
 resource "yandex_storage_bucket" "test-aeivanov" {
-  access_key    = yandex_iam_service_account_static_access_key.sa-static-key.access_key
-  secret_key    = yandex_iam_service_account_static_access_key.sa-static-key.secret_key
+  access_key    = var.access_key
+  secret_key    = var.secret_key
   bucket        = var.bucket_name
   force_destroy = "true"
 }
