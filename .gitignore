@@ -1,4 +1,5 @@
 packer/variables.json
+packer/files/key.json
 *.tfstate
 *.tfstate.*.backup
 *.tfstate.backup
