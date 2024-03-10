@@ -1,5 +1,7 @@
 {
-  "service_account_key_file": "key.json",
-  "fid": "b1getl3tuf5pfgn1sefg",
-  "sif": "ubuntu-1604-lts"
+    "folder_id": "b1getl3*************",
+    "source_image_family": "ubuntu-1604-lts",
+    "service_account_key_file": "files/key.json.example",
+    "zone": "ru-central1-a",
+    "use_ipv4_nat": "true"
 }
