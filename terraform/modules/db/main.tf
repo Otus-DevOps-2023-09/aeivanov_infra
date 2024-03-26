@@ -5,7 +5,7 @@
 #    }
 #  }
 #  required_version = ">= 0.13"
-}
+#}
 provider "yandex" {
   service_account_key_file = var.service_account_key_file
   cloud_id                 = var.cloud_id
@@ -36,7 +36,6 @@ resource "yandex_compute_instance" "db" {
 
   network_interface {
     subnet_id = var.subnet_id
-    nat = true
   }
 
   metadata = {

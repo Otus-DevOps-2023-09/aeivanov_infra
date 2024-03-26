@@ -15,11 +15,11 @@ provider "yandex" {
 }
 
 resource "yandex_compute_instance" "app" {
-  name        = "reddit-app-${var.env}"
+  name        = "reddit-db-${var.env}"
   platform_id = "standard-v3"
 
   labels = {
-    tags = "reddit-app-${var.env}"
+    tags = "reddit-db-${var.env}"
   }
 
   resources {
@@ -36,7 +36,6 @@ resource "yandex_compute_instance" "app" {
 
   network_interface {
     subnet_id = var.subnet_id
-    nat = true
   }
 
   metadata = {
