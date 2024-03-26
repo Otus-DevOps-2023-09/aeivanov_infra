@@ -1,7 +1,5 @@
 {
-    "folder_id": "b1getl3*************",
-    "source_image_family": "ubuntu-1604-lts",
-    "service_account_key_file": "files/key.json.example",
-    "zone": "ru-central1-a",
-    "use_ipv4_nat": "true"
+	"key": "key.json",
+	"fid": "abcde",
+	"image": "ubuntu-1604-lts"
 }
