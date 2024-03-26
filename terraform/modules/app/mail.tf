@@ -1,11 +1,11 @@
-#terraform {
-#  required_providers {
-#    yandex = {
-#      source = "yandex-cloud/yandex"
-#    }
-#  }
-#  required_version = ">= 0.13"
-#}
+terraform {
+  required_providers {
+    yandex = {
+      source = "yandex-cloud/yandex"
+    }
+  }
+  required_version = ">= 0.13"
+}
 provider "yandex" {
   service_account_key_file = var.service_account_key_file
   cloud_id                 = var.cloud_id
@@ -15,11 +15,11 @@ provider "yandex" {
 }
 
 resource "yandex_compute_instance" "app" {
-  name        = "reddit-db-${var.env}"
+  name        = "reddit-app-${var.env}"
   platform_id = "standard-v3"
 
   labels = {
-    tags = "reddit-db-${var.env}"
+    tags = "reddit-app-${var.env}"
   }
 
   resources {
@@ -36,6 +36,7 @@ resource "yandex_compute_instance" "app" {
 
   network_interface {
     subnet_id = var.subnet_id
+    nat = true
   }
 
   metadata = {
