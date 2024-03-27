@@ -1,7 +1,17 @@
 #!/bin/bash
-sudo apt update
-echo Waiting for apt-get to finish...
-a=1; while [ -n "$(pgrep apt-get)" ]; do echo $a; sleep 1s; a=$(expr $a + 1); done
-sudo apt install mongodb -y
-sudo systemctl start mongodb
-sudo systemctl enable mongodb
+
+# add repository key
+wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
+
+# add mongodb repository
+echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+sleep 3m
+# update list packages
+apt-get update
+
+# install mongodb
+apt-get install -y mongodb-org
+
+# start and enable mongodb service
+systemctl start mongod
+systemctl enable mongod
