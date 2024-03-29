@@ -1,5 +1,8 @@
 #!/bin/bash
-sudo apt update
-echo Waiting for apt-get to finish...
-a=1; while [ -n "$(pgrep apt-get)" ]; do echo $a; sleep 1s; a=$(expr $a + 1); done
-sudo apt install -y ruby-full ruby-bundler build-essential
+
+# Update package list
+apt-get update
+#remove blocking
+echo "sleep 3m for install updates"; sleep 3m; echo 'sleep start install ruby'
+# Install ruby packages
+apt-get install -y ruby-full ruby-bundler build-essential
