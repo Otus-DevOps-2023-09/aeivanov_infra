@@ -1,8 +1,22 @@
-packer/variables.json
-packer/files/key.json
-packer/key.json
+# packer files
+variables.json
+
+### Terraform files
 *.tfstate
 *.tfstate.*.backup
 *.tfstate.backup
 *.tfvars
 .terraform/
+
+### Ansible files
+*.retry
+jdauphant.nginx
+vault.key
+
+# Vagrant & molecule
+.vagrant/
+*.log
+*.pyc
+.molecule
+.cache
+.pytest_cache

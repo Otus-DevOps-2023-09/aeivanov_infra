@@ -1,4 +1,4 @@
-#ppserver ansible_python_interpreter=/usr/local/bin/python3.10
+#appserver ansible_python_interpreter=/usr/local/bin/python3.10
 #dbserver ansible_python_interpreter=/usr/local/bin/python3.10
 [app]
 appserver ansible_host=158.160.113.162 
